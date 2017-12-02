@@ -1,0 +1,38 @@
+<!--<div class="well">
+	<a routerLink="/lugares">Lugares</a> / Contacto
+</div>-->
+<section class="wrapContacto">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="devServicio">
+					<div class="imgLogo"><img src="assets/logo.png"></div>
+				</div>
+				<div class="text-center">
+					<h3>CONTACTANOS</h3><br>
+					<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 959 657 003 </p>
+					<p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> contacto@home.com </p>
+					<p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> San Juan del Puerto - Huelva | España </p>
+				</div>		
+			</div>
+			<div class="col-md-5">
+				<div class="formBox">
+					<h3>Escríbenos <span class="glyphicon glyphicon-send" aria-hidden="true"></span></h3>
+					<form action="contacto_submit" method="get" accept-charset="utf-8">
+						<label>Nombre</label>
+						<input type="text" class="form-control" placeholder="Escribe tu nombre" required="" />
+						<br/>
+						<label>Email</label>
+						<input type="email" class="form-control" placeholder="Escribe tu email" required=""/>
+						<br/>
+						<label>Mensaje</label>
+						<textarea class="form-control" placeholder="Escribe tu mensaje" required=""></textarea>
+						<hr>
+						<a class="btn btnEnviar">Enviar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+						<a class="btn btnCancelar" routerLink="/lugares">Cancelar</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>

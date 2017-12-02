@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+agm-map {
+  height: 300px;
+  /*width: 100%;*/
+}
+
+
+.numero_par{
+	background: aliceblue;
+	color: blue;
+}
+
+.wrapContacto{
+	background-image: url(./assets/bgBodyContacto.jpg);
+	background-position: 50% 50%;
+	background-size: cover;
+	color: white;
+	height: 100vh;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+
+.formBox{
+	background: rgba(204,204,204,0.2);
+	margin: 70px 0;
+	padding: 25px 25px 40px 25px;
+}
+
+.formBox input{
+	border-radius: 0;
+	color: #3f888f;
+}
+
+.formBox textarea{
+	border-radius: 0;
+	color: #3f888f;
+}
+
+
+.devServicio{
+	margin: 90px 0 40px 0;
+	text-align: center;
+}
+
+.btnEnviar{
+	background-color: #3f888f;
+	border-radius: 0;
+	color: white;
+	margin: 0 10px 0 0;
+}
+
+.btnEnviar:hover{
+	color: white;
+}
+
+.btnCancelar{
+	background-color: white;
+	border-radius: 0;
+	color: #3f888f;
+}
+
+.btnCancelar{
+	color: #3f888f;
+}
+
+@media screen and (max-width: 992px){
+	.wrapContacto{
+		background-image: url(./assets/bgBodyContacto.jpg);
+		background-position: 50% 50%;
+		background-size: cover;
+		color: white;
+		height: 100%;
+	}
+}
