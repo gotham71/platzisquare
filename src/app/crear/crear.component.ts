@@ -26,8 +26,8 @@ export class CrearComponent {
 			this.lugar.lng = result.json().results[0].geometry.location.lng;
 			this.lugar.id = Date.now();
 				this.lugaresService.guardarLugar(this.lugar);
-				alert('Negocio guardado con éxito!');
-			
+				alert('Negocio guardado con éxito!!');
+
 			this.lugar = {};
 		});
 	}
