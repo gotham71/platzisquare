@@ -11,7 +11,7 @@ export class CrearComponent {
   id: any = null;
   constructor(private lugaresService: LugaresService, private route: ActivatedRoute){
     this.id = this.route.snapshot.params['id'];
-    if (this.id !== 'new'){
+    if (this.id !== 'new') {
       this.lugaresService.getLugar(this.id)
         .valueChanges().subscribe((lugar) => {
           this.lugar = lugar;
@@ -29,7 +29,7 @@ export class CrearComponent {
         alert('Negocio editado con éxito!!');
       } else {
         this.lugar.id = Date.now();
-        this.lugaresService.guardarLugar(this.lugar);
+        this.lugaresService.guardarLugar(this.lugar).subscribe();
         alert('Negocio guardado con éxito!!');
       }
       this.lugar = {};

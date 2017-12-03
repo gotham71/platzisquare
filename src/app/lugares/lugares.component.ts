@@ -12,10 +12,17 @@ export class LugaresComponent {
   lng:number = -6.8401699;
   zoom:number = 19;
   lugares = null;
+  showError = null;
   constructor(private lugaresService: LugaresService) {
      lugaresService.getLugares()
-       .valueChanges().subscribe(lugares => {
+       .subscribe(lugares => {
          this.lugares = lugares;
+          var me = this;
+          this.lugares = Object.keys(this.lugares).map(function(key) {
+            return me.lugares[key];
+          });
+       }, error => {
+         this.showError = error.statusText;
        });
   }
 }
