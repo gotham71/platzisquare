@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule } from '@angular/router';
 import { DetalleComponent } from './detalle/detalle.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -17,14 +17,14 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 const appRoutes: Routes = [
-	{path:'', component: LugaresComponent},
-	{path:'lugares', component: LugaresComponent},
-	{path:'detalle/:id', component: DetalleComponent},
-	{path:'contacto', component: ContactoComponent},
-	{path:'crear/:id', component: CrearComponent},
+  {path: '', component: LugaresComponent},
+  {path: 'lugares', component: LugaresComponent},
+  {path: 'detalle/:id', component: DetalleComponent},
+  {path: 'contacto', component: ContactoComponent},
+  {path: 'crear/:id', component: CrearComponent},
 ];
 
 
@@ -41,7 +41,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, 
+    AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpModule,
