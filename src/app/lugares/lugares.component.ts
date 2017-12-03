@@ -12,7 +12,7 @@ export class LugaresComponent {
   lng:number = -6.8401699;
   zoom:number = 19;
   lugares = null;
-  constructor(private lugaresService: LugaresService){
+  constructor(private lugaresService: LugaresService) {
      lugaresService.getLugares()
        .valueChanges().subscribe(lugares => {
          this.lugares = lugares;
