@@ -9,7 +9,7 @@ export class LugaresComponent {
   title = 'PlatziSquare';
 
   lat:number = 37.313701;
-  lng:number = -6.8401698;
+  lng:number = -6.8401699;
   zoom:number = 19;
   lugares = null;
   constructor(private lugaresService: LugaresService) {
