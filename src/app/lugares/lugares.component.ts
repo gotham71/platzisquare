@@ -7,7 +7,7 @@ import { LugaresService } from "../services/lugares.service";
 })
 export class LugaresComponent {
   title = 'PlatziSquare';
-  
+
   lat:number = 37.313701;
   lng:number = -6.8401699;
   zoom:number = 19;
@@ -17,5 +17,5 @@ export class LugaresComponent {
        .valueChanges().subscribe(lugares => {
          this.lugares = lugares;
        });
-  } 
+  }
 }
