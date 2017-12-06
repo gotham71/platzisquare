@@ -12,9 +12,11 @@
         <a class="btn btn-primary" routerLink="/crear/new">Crear Nuevo Negocio</a>
         <ul class="list-group">
             <ng-container *ngFor="let lugar of lugares">
-
                   <li class="list-group-item">
-                    <a routerLink="/crear/{{ lugar.id }}"><h3>{{ lugar.nombre }}</h3></a>
+                    <a routerLink="/crear/{{ lugar.id }}">
+                      <h3>{{ lugar.nombre }}</h3>
+                      <span class="glyphicon glyphicon-star pull-right" *ngIf="lugar.plan == 'Pagado'"></span>
+                    </a>
                     <br/>
                     <small>Creado: {{lugar.id | date:'fullDate' }}</small>
                    <p [innerHTML]='lugar.descripcion | linkifystr'></p>
@@ -24,8 +26,17 @@
             </ng-container>
         </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" [@contenedorAnimable]="state">
          <h2>Destacados</h2>
+           <ng-container *ngFor="let lugar of lugares">
+              <div class="bg-warning padding" *ngIf="lugar.plan == 'Pagado'" >
+                <a routerLink="/crear/{{ lugar.id }}">
+                  <h3>{{ lugar.nombre }}</h3>
+                </a>
+                <br/>
+                <p [innerHTML]='lugar.descripcion | linkifystr'></p>
+              </div>
+            </ng-container>
     </div>
   </div>
 </div>

@@ -71,6 +71,15 @@ agm-map {
 	color: #3f888f;
 }
 
+#cuadrado {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+.padding {
+  margin: 0 0 10px 0;
+  padding: 5px 10px;
+}
 @media screen and (max-width: 992px){
 	.wrapContacto{
 		background-image: url(./assets/bgBodyContacto.jpg);
