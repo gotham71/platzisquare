@@ -14,8 +14,9 @@ export class DetalleComponent {
       console.log(this.route.snapshot.queryParams['action']);
       console.log(this.route.snapshot.queryParams['referer']);
       this.id = this.route.snapshot.params['id'];
-      this.lugar = this.lugaresService.buscarLugar(this.id).valueChanges().subscribe(lugar => {
-        this.lugar = lugar;
-      });
+      this.lugar = this.lugaresService.buscarLugar(this.id);
+      // this.lugar = this.lugaresService.buscarLugar(this.id).valueChanges().subscribe(lugar => {
+      //   this.lugar = lugar;
+      // });
   }
 }

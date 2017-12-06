@@ -16,6 +16,7 @@ export class LugaresService {
   }
 
   public buscarLugar(id) {
+    console.log('buscarlugar id: ' + id);
     return this.afDB.object('lugares/' + id);
     // return this.lugares.filter((lugar) => { return lugar.id == id})[0] || null;
   }

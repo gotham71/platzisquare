@@ -12,7 +12,13 @@
         <a class="btn btn-primary" routerLink="/crear/new">Crear Nuevo Negocio</a>
         <ul class="list-group">
             <ng-container *ngFor="let lugar of lugares">
-              <a routerLink="/crear/{{ lugar.id }}"><li class="list-group-item">{{ lugar.nombre }}</li></a>
+
+                  <li class="list-group-item">
+                    <a routerLink="/crear/{{ lugar.id }}"><h3>{{ lugar.nombre }}</h3></a>
+                    <br/>
+                    <small>Creado: {{lugar.id | date:'fullDate' }}</small>
+                   <p [innerHTML]='lugar.descripcion | linkifystr'></p>
+                  </li>
               <!-- <a routerLink="/detalle/{{ lugar.id }}" [queryParams]="{action:'edit', referer:'google'}"><li class="list-group-item">{{ lugar.nombre }}</li></a> -->
               <!-- *ngIf="lugar.active" en el li para chequear si activo -->
             </ng-container>

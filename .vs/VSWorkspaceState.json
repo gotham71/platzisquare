@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node_modules",
     "\\node_modules\\node-sass",
     "\\node_modules\\node-sass\\src",
     "\\node_modules\\node-sass\\src\\libsass",
@@ -9,6 +8,5 @@
     "\\src",
     "\\src\\app"
   ],
-  "SelectedNode": "\\node_modules\\node-sass\\src\\libsass\\win\\libsass.sln",
   "PreviewInSolutionExplorer": false
 }

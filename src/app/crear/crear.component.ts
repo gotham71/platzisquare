@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CrearComponent {
   lugar: any = {};
   id: any = null;
-  constructor(private lugaresService: LugaresService, private route: ActivatedRoute){
+  constructor(private lugaresService: LugaresService, private route: ActivatedRoute) {
     this.id = this.route.snapshot.params['id'];
     if (this.id !== 'new') {
       this.lugaresService.getLugar(this.id)

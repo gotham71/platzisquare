@@ -19,6 +19,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 const appRoutes: Routes = [
   {path: '', component: LugaresComponent},
   {path: 'lugares', component: LugaresComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifystrPipe
   ],
   imports: [
     BrowserModule,
