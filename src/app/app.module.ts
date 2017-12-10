@@ -21,12 +21,18 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { LinkifystrPipe } from './pipes/linkifystr.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import { AutorizacionService } from './services/autorizacion.service';
+import { MyGuard } from './services/my-guard.service';
 const appRoutes: Routes = [
   {path: '', component: LugaresComponent},
   {path: 'lugares', component: LugaresComponent},
   {path: 'detalle/:id', component: DetalleComponent},
   {path: 'contacto', component: ContactoComponent},
-  {path: 'crear/:id', component: CrearComponent},
+  {path: 'crear/:id', component: CrearComponent, canActivate: [MyGuard]},
+  {path: 'login', component: LoginComponent},
+  {path: 'registro', component: RegistroComponent},
 ];
 
 
@@ -39,6 +45,8 @@ const appRoutes: Routes = [
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
+    LoginComponent,
+    RegistroComponent,
     LinkifystrPipe
   ],
   imports: [
@@ -55,7 +63,7 @@ const appRoutes: Routes = [
     }),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LugaresService],
+  providers: [LugaresService, AutorizacionService, MyGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,11 +8,12 @@ export class LugaresService {
   API_ENDPOINT = 'https://platzisquare-1510516293883.firebaseio.com';
   constructor(private afDB: AngularFireDatabase, private http: Http) {}
   public getLugares() {
-    return this.http.get(this.API_ENDPOINT + '/.json').map((resultado) => {
-      const data = resultado.json().lugares;
-      return data;
-    });
+    // return this.http.get(this.API_ENDPOINT + '/.json').map((resultado) => {
+    //   const data = resultado.json().lugares;
+    //   return data;
+    // });
     // return this.afDB.list('/lugares/');
+    return this.afDB.list('lugares').valueChanges();
   }
 
   public buscarLugar(id) {
