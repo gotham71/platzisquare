@@ -12,16 +12,39 @@
 	<input type="number" class="form-control" placeholder="Escribe La cercanía" required="" [(ngModel)]="lugar.cercania"/>
 	<br/>
 	<label>Descripción</label>
-	<textarea class="form-control" placeholder="Escribe la descripción" required="" [(ngModel)]="lugar.descripcion"></textarea>
-	<label>Plan</label>
-	<input type="text" class="form-control" placeholder="Escribe tu plan" required=""  [(ngModel)]="lugar.plan"/>
-	<h3>Datos de Dirección</h3>
+  <textarea class="form-control" placeholder="Escribe la descripción" required="" [(ngModel)]="lugar.descripcion"></textarea>
+  <label>Categoría</label>
+  <select class="form-control" placeholder="Elige la Categoría" required="" [(ngModel)]="lugar.categoria">
+    <option value="Moda">Moda</option>
+    <option value="Informatica">Informática</option>
+    <option value="Hoteles">Hoteles</option>
+    <option value="Restaurantes">Restaurantes</option>
+  </select>
+  <label>Plan</label>
+  <select class="form-control" placeholder="Elige tu Plan" required="" [(ngModel)]="lugar.plan">
+    <option value="Pagado">Pagado</option>
+    <option value="Gratuito">Gratuito</option>
+  </select>
+  <label>Fecha de Inicio</label>
+  <input type="date" class="form-control" name="input" ng-model="lugar.fechaInicio" placeholder="dd-MM-yyyy" required />
+  <label>Fecha de Fin</label>
+  <input type="date" class="form-control" name="input" ng-model="lugar.fechaFin" placeholder="dd-MM-yyyy" required />
+  <h3>Datos de Dirección</h3>
+  <div class="well">
+    <form>
+      <label><h3>Buscar Dirección en Google Maps</h3></label>
+      <input type="text" [formControl]="searchField" class="form-control">
+    </form>
+    <ul class="list-group">
+      <li class="list-group-item" (click)="obtenerDireccion(result)" *ngFor="let result of results$ | async">{{ result.formatted_address }}</li>
+    </ul>
+  </div>
 	<label>Calle y Número</label>
-	<input type="text" class="form-control" placeholder="Escribe tu plan" required=""  [(ngModel)]="lugar.calle"/>
+	<input type="text" class="form-control" placeholder="Calle y Número" required=""  [(ngModel)]="lugar.calle"/>
 	<label>Ciudad</label>
-	<input type="text" class="form-control" placeholder="Escribe tu plan" required=""  [(ngModel)]="lugar.ciudad"/>
+	<input type="text" class="form-control" placeholder="Ciudad" required=""  [(ngModel)]="lugar.ciudad"/>
 	<label>País</label>
-	<input type="text" class="form-control" placeholder="Escribe tu plan" required=""  [(ngModel)]="lugar.pais"/>
+	<input type="text" class="form-control" placeholder="País" required=""  [(ngModel)]="lugar.pais"/>
 	<br/>
 	<hr>
 	<a class="btn btnEnviar" (click)="guardarLugar()">Enviar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>

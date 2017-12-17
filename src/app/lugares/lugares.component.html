@@ -15,8 +15,10 @@
                   <li class="list-group-item">
                     <a routerLink="/crear/{{ lugar.id }}">
                       <h3>{{ lugar.nombre }}</h3>
+
                       <span class="glyphicon glyphicon-star pull-right" *ngIf="lugar.plan == 'Pagado'"></span>
                     </a>
+                    <h4>{{ lugar.categoria }}</h4>
                     <br/>
                     <small>Creado: {{lugar.id | date:'fullDate' }}</small>
                    <p [innerHTML]='lugar.descripcion | linkifystr'></p>
@@ -28,7 +30,7 @@
     </div>
     <div class="col-md-4" [@contenedorAnimable]="state">
          <h2>Destacados</h2>
-           <ng-container *ngFor="let lugar of lugares">
+           <ng-container *ngFor="let lugar of lugaresPayedRandom">
               <div class="bg-warning padding" *ngIf="lugar.plan == 'Pagado'" >
                 <a routerLink="/crear/{{ lugar.id }}">
                   <h3>{{ lugar.nombre }}</h3>

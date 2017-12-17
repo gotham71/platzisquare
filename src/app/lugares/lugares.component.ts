@@ -25,6 +25,7 @@ export class LugaresComponent {
   lng: number = -6.8401699;
   zoom: number = 19;
   lugares = null;
+  lugaresPayedRandom = null;
   showError = null;
 
    constructor(private lugaresService: LugaresService) {
@@ -41,5 +42,11 @@ export class LugaresComponent {
         this.showError = error.statusText;
       }
     );
-  }
+    lugaresService.getLugaresPayedRandom().subscribe(lugares => {
+         this.lugaresPayedRandom = lugares;
+         return this.lugaresPayedRandom;
+       }, error => {
+         this.showError = error.statusText;
+       });
+   }
 }
