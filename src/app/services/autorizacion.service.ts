@@ -29,7 +29,7 @@ export class AutorizacionService {
       console.log(error);
     });
   }
-  public registro = (email, password) => {
+  public registro = (email, password, role) => {
     this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password).then((response) => {
       alert('Usuario Registrado con éxito!');
       console.log(response);
@@ -39,6 +39,9 @@ export class AutorizacionService {
       alert('Un error ha ocurrido');
       console.log(error);
     });
+  }
+  public isAdmin() {
+    return this.angularFireAuth.authState;
   }
   public isLogged() {
     return this.angularFireAuth.authState;

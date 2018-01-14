@@ -10,6 +10,6 @@ export class RegistroComponent {
   constructor(private autorizacionService: AutorizacionService) {
   }
   registrar() {
-    this.autorizacionService.registro(this.registro.email, this.registro.password);
+    this.autorizacionService.registro(this.registro.email, this.registro.password, this.registro.role);
   }
 }
